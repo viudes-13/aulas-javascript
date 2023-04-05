@@ -11,10 +11,10 @@ const -> indica constante */
 
 // Criando variáveis
 let ano = 2023;
-let curso = "Programador Web";
+let curso = "Programador Web"; // pode ser aspas simples ''
 let cidade = "São Paulo";
 
-// Criando constantes
+// Criando constantes (valor que não muda)
 const nome = "Tiago";
 const escola = "Senac";
 
@@ -41,7 +41,7 @@ console.log( total.toFixed(2) );
 
 /* Saída de dados estáticos e dinâmicos */
 
-// Forma 1 (moderna): Template String
+// Forma 1 (moderna): Template String/Literal
 console.log(`Olá! Me chamo ${nome} e estou fazendo o curso de ${curso} no ${escola}`);
 
 // Forma 2 (antiga/tradicional): Concatenação
