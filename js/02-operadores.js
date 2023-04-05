@@ -10,7 +10,7 @@ let imc = peso / (altura ** altura);
 // Saida 
 console.log(`Peso: ${peso} kg`);
 console.log(`Altura: ${altura}`);
-console.log(`IMC: ${imc.toFixed(2)}`);
+console.log(`Resultado IMC: ${imc.toFixed(2)}`);
 
 // To fixed serve para casas decimais 
 
