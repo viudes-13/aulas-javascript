@@ -88,5 +88,36 @@ console.log ( `A pessoa é ${resultado } de idade`);
 
 console.log ('------------')
 
+/* switch/case/break/default*/
 
+/* Algoritmo de um chatbot
+Opçoes:
+1 -> pedir informaçoes
+2 -> abrir reclamação
+3 -> fazer um elogio
+x -> falar com atende humano
+*/
+let opcao = parseInt(prompt('Digite 1, 2 ou 3') );
+let mensagem;
+
+switch (opcao){
+    case 1: mensagem = "Ok, o que quer saber?"
+    break;
+
+    case 2:
+        mensagem = "Puxa, que pena. O que houve?"
+    break;
+
+    case 3: 
+    mensagem = "Bacana! Conte-me : "
+    break;
+
+    default:
+        mensagem = "Não entendi... vou chamar alguem!"
+        break;
+
+}
+
+console.log(`Opção escolhida: ${opcao}`);
+console.log(mensagem);
 
