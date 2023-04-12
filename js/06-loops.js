@@ -19,6 +19,7 @@ DEIXAR SALVAMENTO AUTO-SAVE DESLIGADO PARA EVITAR BUG
 
     // contador = contador + 1; } //
 
+    /* MENOS USADO!!! */
     /* exemplo 2: do/while (faça/enquanto) 
     este loop funfionara SEMPRE no minimo uma vez, não importando a condição */ 
 
@@ -48,4 +49,38 @@ const alunos = [
 
 for(let i = 0; i < 70; i++){
     console.log(`nome: ${alunos[i]}`);
+}
+
+console.log ("---------")
+
+/* for/of para de/do */
+console.log("--Resultado usando fro/of--")
+
+/* for/for é uma sintaxe exclusiva (e mais simples)
+para manipulação de dados de um array */
+for(let aluno of alunos){
+    console.log (`nome: ${aluno}`);
+}
+
+console.log ("---------")
+
+/* for/in: sintaxe exclusiva para manipulação
+de dados de um objeto */
+let pessoa = {
+    nome: "Thiago",
+    idade: 19,
+    cidade: "São Paulo"
+
+};
+
+for( let dados in pessoa ){
+    /* exibe somente o nome das props. */
+    // console.log(dados);
+    
+        /* exibe os dados de cada  pros. */
+    // console.log(pessoa[dados]);
+
+    console.log(
+        `${dados}: ${pessoa[dados]}`
+    )
 }
