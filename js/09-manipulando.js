@@ -17,6 +17,12 @@ exemplo1.addEventListener("mouseout", function(){
     exemplo1.style.fontFamily = "times new roman"
     exemplo1.style.textTransform = "none"
     exemplo1.style.color = "black"
+
+    if(pagina.classList.contains("modo-noturno")){
+        exemplo1.style.color = "white";
+    }else {
+        exemplo1.style.color = "black";
+    }
 });
 
 // Exemplo 2: modo noturno 
@@ -45,5 +51,74 @@ botao.addEventListener("click", function(){
     botao.textContent = "ativar"
     }
 });
+
+/* Exemplo 3: sumulação de cadastro
+Captura de dados de formulario, cálculos de valores,
+verificação condicional, criação de HTML via JS,
+adição de conteudo/resultados na pagina (DOM) */
+
+// Acessar e selecionar elementos que serão usados 
+// pegou os elemento e jogu na memoria
+const formulario = document.querySelector("form");
+const camponome = document.querySelector("#nome");
+const camponota1 = document.querySelector("#nota1");
+const camponota2 = document.querySelector("#nota2");
+const divResultados = document.querySelector("#resultados")
+
+/* Etapa 2
+Monitorar o evento de acionamento do formulário,
+ou seja, detactar quando o usario clica no botao do formulario
+OU pressiona ENTER */
+formulario.addEventListener("submit", function(event){
+    event.preventDefault();
+    /* Usamos o comando abaixo para anular o 
+    comportamento padrao do navegador de tentar fazer um redirecionamento de página
+    ao acionar o formulario. isso é importante para as açoes progamadas na função possam
+    ser interpretadas. */
+
+    // Etapa 3: capturar os valores digitados 
+
+    let nome = camponome.value; 
+    let nota1 = parseFloat(camponota1.value); 
+    let nota2 = parseFloat(camponota2.value); 
+
+    //testes
+    // console.log(nome, nota1, nota2);
+
+    //Exercecio 
+    let media = (nota1 + nota2) / 2;
+    // console.log (media)
+    let situacao;
+    if(media >=7){
+        situacao ="aprovado";
+    }else {
+        situacao = "reprovado";
+    }
+    console.log (nome,nota1,nota2,media,situacao);
+
+/* Progamação para colocar os resultados no HTML */
+// 1) Criar o elemento/tag que será colocada no HTML
+    let paragrafo = document.createElement("p");
+
+    // 2) montar o conteudo da nova tag
+    paragrafo.inertHTML = `${nome} - ${meida} - ${situacao}`
+    console.log(paragrafo);
+
+    //3) adicionar ao HTML de destino (intejar no DOM)
+    divResultados.appendChild(paragrafo);
+
+    //Limpas os campos
+    formulario.reset
+
+    //Devolver o foco (cursor) para o campo nome
+    camponome.focus();
+
+
+});
+
+
+
+
+
 
 
